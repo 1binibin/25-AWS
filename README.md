@@ -167,4 +167,33 @@ GRANT all privileges ON *.* TO '유저'@'%' identified by '비밀번호';
 flush privileges;
 ```
 
+## MySQL 데이터베이스 설정
+```sql
+-- book database 생성
+create database '이름'
+
+-- book에 접근할 book사용자 생성
+GRANT all privileges ON book.* TO 'book'@'%' identified by '비밀번호';
+```
+
+
 ## MySQL(MariaDB) 외부접속허용
+```bash
+# MySQL 환경설정 파일 열기
+sudo vi /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# vi - 아래처럼 주석 처리 -> 주석처리 하면 외부에서도 나의 DB에 접근 가능
+# bind_address = 127.0.0.1 
+```
+
+## 수정 사항
+```bash
+# git pull
+git pull 
+
+# 서버 죽이기
+pm2 kill
+
+# 서버 살리기 (2개 다)
+pm2 start app.js
+```
